@@ -3,8 +3,7 @@ import time
 from discord.ext import commands
 
 class General:
-    def __init__(self, ctx, bot):
-        self.ctx = ctx
+    def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
