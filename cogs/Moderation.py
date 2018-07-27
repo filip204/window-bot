@@ -4,8 +4,7 @@ import asyncio
 from discord.ext import commands
 
 class Moderation:
-    def __init__(self, ctx, bot):
-        self.ctx = ctx
+    def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
