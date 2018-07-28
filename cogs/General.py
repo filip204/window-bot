@@ -7,7 +7,7 @@ class General:
         self.bot = bot
 
     @commands.command()
-    async def info(ctx):
+    async def info(self, ctx):
         """Gets the info about bot."""
         em=discord.Embed(
             title="The Window Bot",
@@ -16,18 +16,17 @@ class General:
         )
 
         em.add_field(name="Add me to your discord", value="")
-        em.add_field(name="Submit a bug report", value="")
 
-        await ctx.send(embed=em)
+        await self.ctx.send(embed=em)
 
 
     @commands.command()
-    async def ping(ctx):
+    async def ping(self, ctx):
         """Pong!"""
-        msg = await ctx.send(':thinking: please wait... :thinking:')
-        res = msg.created_at - ctx.message.created_at
+        msg = await self.ctx.send(':thinking: please wait... :thinking:')
+        res = msg.created_at - self.ctx.message.created_at
         res = tdm(res)
-        em=discord.embed(title="Pong!", description="Latency: {}ms".format(res))
+        em=discord.Embed(title="Pong!", description=f"Latency: {res}ms")
         await msg.edit(embed=em)
 
 def setup(bot):
